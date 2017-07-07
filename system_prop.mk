@@ -104,6 +104,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Audio
 #
 PRODUCT_PROPERTY_OVERRIDES += \
+	aaudio.mmap_exclusive_policy=2 \
+	aaudio.mmap_policy=2 \
 	af.fast_track_multiplier=1 \
 	audio_hal.force_voice_config=wide
 
