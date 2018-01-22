@@ -43,6 +43,11 @@ TARGET_USES_64_BIT_BINDER := true
 TARGET_BOOTLOADER_BOARD_NAME := universal7420
 TARGET_NO_BOOTLOADER := true
 
+# Camera-shims
+TARGET_LD_SHIM_LIBS += \
+	/system/lib/libexynoscamera.so|/vendor/lib/libexynoscamera_shim.so \
+	/system/lib64/libexynoscamera.so|/vendor/lib64/libexynoscamera_shim.so
+
 # Charger
 WITH_LINEAGE_CHARGER := false
 BACKLIGHT_PATH := /sys/devices/13900000.dsim/backlight/panel/brightness
