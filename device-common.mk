@@ -129,6 +129,10 @@ PRODUCT_PACKAGES += \
 # RenderScript
 PRODUCT_PACKAGES += \
     android.hardware.renderscript@1.0-impl
+    
+# Stagefright-shims
+PRODUCT_PACKAGES += \
+	libstagefright_shim
 
 # Wifi
 PRODUCT_PACKAGES += \
