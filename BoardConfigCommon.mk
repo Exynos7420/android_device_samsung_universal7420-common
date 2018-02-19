@@ -65,6 +65,9 @@ CHARGING_ENABLED_PATH := "/sys/class/power_supply/battery/batt_lp_charging"
 # Device Tree
 BOARD_USES_DT := true
 
+# Extended filesystem support
+TARGET_EXFAT_DRIVER := sdfat
+
 # FIMG2D
 BOARD_USES_SKIA_FIMGAPI := true
 BOARD_USES_FIMGAPI_V5X := true
