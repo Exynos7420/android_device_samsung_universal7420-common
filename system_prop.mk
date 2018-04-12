@@ -155,4 +155,5 @@ PRODUCT_PROPERTY_OVERRIDES += \
 #
 PRODUCT_PROPERTY_OVERRIDES += \
 	ro.lmk.log_stats=true \
-	ro.lmk.use_psi=false
+	ro.lmk.use_psi=false \
+	ro.lmk.use_minfree_levels=true
