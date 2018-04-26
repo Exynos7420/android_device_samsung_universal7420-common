@@ -60,6 +60,10 @@ PRODUCT_COPY_FILES += \
 	frameworks/native/data/etc/com.nxp.mifare.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.nxp.mifare.xml \
 	frameworks/native/data/etc/handheld_core_hardware.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/handheld_core_hardware.xml
 
+# Additional native libraries
+PRODUCT_COPY_FILES += \
+	$(LOCAL_PATH)/configs/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt
+
 # Audio
 PRODUCT_PACKAGES += \
 	audio.primary.universal7420_32 \
