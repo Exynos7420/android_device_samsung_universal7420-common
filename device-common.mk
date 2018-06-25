@@ -155,6 +155,13 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.gatekeeper@1.0-service.software
 
+# IRQs
+PRODUCT_PACKAGES += \
+	irqbalance
+
+PRODUCT_COPY_FILES += \
+	$(LOCAL_PATH)/hardware/irqbalance/irqbalance.conf:system/vendor/etc/irqbalance.conf
+
 # Keymaster
 PRODUCT_PACKAGES += \
 	android.hardware.keymaster@3.0-impl \
