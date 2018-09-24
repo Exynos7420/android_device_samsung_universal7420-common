@@ -114,3 +114,4 @@ ro.lineage.build.vendor_security_patch=2019-01-01
 #
 
 wifi.interface=wlan0
+wifi.direct.interface=p2p-dev-wlan0
