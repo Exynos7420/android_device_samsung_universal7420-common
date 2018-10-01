@@ -166,9 +166,6 @@ BOARD_USES_CEC := true
 BOARD_HAS_LARGE_FILESYSTEM := true
 TARGET_USERIMAGES_USE_EXT4 := true
 
-# Seccomp filters
-BOARD_SECCOMP_POLICY += device/samsung/zero-common/seccomp
-
 # Vendor separation
 TARGET_COPY_OUT_VENDOR := system/vendor
 
@@ -188,4 +185,3 @@ WIFI_DRIVER_FW_PATH_PARAM        := "/sys/module/dhd/parameters/firmware_path"
 WIFI_DRIVER_FW_PATH_STA          := "/system/vendor/etc/wifi/bcmdhd_sta.bin"
 WIFI_DRIVER_FW_PATH_AP           := "/system/vendor/etc/wifi/bcmdhd_apsta.bin"
 WIFI_BAND                        := 802_11_ABG
-
