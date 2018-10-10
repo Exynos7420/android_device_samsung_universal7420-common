@@ -146,7 +146,10 @@ BOARD_USES_TRUST_KEYMASTER := true
 # Mediaserver-shim
 TARGET_LD_SHIM_LIBS += \
 	/system/bin/mediaserver|/vendor/lib/libstagefright_shim.so
-	
+
+# Networking
+TARGET_NEEDS_NETD_DIRECT_CONNECT_RULE := true
+
 # NFC
 BOARD_NFC_HAL_SUFFIX := universal7420
 
