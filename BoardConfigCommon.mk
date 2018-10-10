@@ -119,6 +119,9 @@ TARGET_CUSTOM_DTBTOOL := dtbhtoolExynos
 # Keymaster
 BOARD_USES_TRUST_KEYMASTER := true
 
+# Networking
+TARGET_NEEDS_NETD_DIRECT_CONNECT_RULE := true
+
 # Platform
 BOARD_VENDOR := samsung
 TARGET_BOARD_PLATFORM := exynos5
