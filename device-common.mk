@@ -196,6 +196,10 @@ PRODUCT_COPY_FILES += \
 # Stagefright-shim
 PRODUCT_PACKAGES += \
 	libstagefright_shim
+	
+# Touch
+PRODUCT_PACKAGES += \
+	vendor.lineage.touch@1.0-service.samsung
 
 # USB
 PRODUCT_PACKAGES += \
