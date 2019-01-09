@@ -200,6 +200,10 @@ PRODUCT_PACKAGES += \
 # Touch
 PRODUCT_PACKAGES += \
 	vendor.lineage.touch@1.0-service.samsung
+	
+# Trust
+PRODUCT_PACKAGES += \
+	vendor.lineage.trust@1.0-service
 
 # USB
 PRODUCT_PACKAGES += \
