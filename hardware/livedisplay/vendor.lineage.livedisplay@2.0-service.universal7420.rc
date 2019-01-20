@@ -1,0 +1,4 @@
+service vendor.livedisplay-hal-2-0-universal7420 /vendor/bin/hw/vendor.lineage.livedisplay@2.0-service.universal7420
+    class hal
+    user system
+    group system
