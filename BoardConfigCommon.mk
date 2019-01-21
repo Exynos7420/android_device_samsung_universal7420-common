@@ -75,6 +75,10 @@ CHARGING_ENABLED_PATH := "/sys/class/power_supply/battery/batt_lp_charging"
 # Device Tree
 BOARD_USES_DT := true
 
+# DEX pre-optimizations
+WITH_DEXPREOPT_BOOT_IMG_AND_SYSTEM_SERVER_ONLY := false
+WITH_DEXPREOPT := true
+
 # FIMG2D
 BOARD_USES_SKIA_FIMGAPI := true
 BOARD_USES_FIMGAPI_V5X := true
