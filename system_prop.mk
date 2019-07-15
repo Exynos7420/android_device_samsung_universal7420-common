@@ -28,6 +28,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	ro.kernel.ebpf.supported=false
 
 #
+# Charger
+#
+PRODUCT_PROPERTY_OVERRIDES += \
+	ro.charger.enable_suspend=true
+
+#
 # Dalvik
 #
 PRODUCT_PROPERTY_OVERRIDES += \
