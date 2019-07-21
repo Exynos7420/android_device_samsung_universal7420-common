@@ -111,6 +111,15 @@ PRODUCT_ENFORCE_VINTF_MANIFEST_OVERRIDE := true
 BOARD_USES_VPP := true
 BOARD_HDMI_INCAPABLE := true
 
+# HWC - Shim
+TARGET_LD_SHIM_LIBS := \
+    /system/lib64/libexynoscamera.so|/system/lib64/libexynoscamera_shim.so \
+    /system/lib/libexynoscamera.so|/system/lib/libexynoscamera_shim.so \
+    /system/lib64/libexynosdisplay.so|/system/lib64/libexynosdisplay_shim.so \
+    /system/lib/libexynosdisplay.so|/system/lib/libexynosdisplay_shim.so \
+    /system/lib64/hw/hwcomposer.exynos5.so|/system/lib64/libexynosdisplay_shim.so \
+    /system/lib/hw/hwcomposer.exynos5.so|/system/lib/libexynosdisplay_shim.so
+
 # HWCServices - requires framework support
 # BOARD_USES_HWC_SERVICES := true
 

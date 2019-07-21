@@ -138,7 +138,8 @@ PRODUCT_PACKAGES += \
 	hwcomposer.exynos5 \
 	libfimg \
 	libhwc2on1adapter \
-	libion
+	libion \
+	libexynosdisplay_shim
 
 # Health
 PRODUCT_PACKAGES += \
