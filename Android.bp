@@ -1,0 +1,7 @@
+subdirs = [
+    "hardware",
+    "shims",
+]
+
+soong_namespace {
+}
