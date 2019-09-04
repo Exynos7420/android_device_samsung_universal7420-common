@@ -169,6 +169,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
 	android.hardware.sensors@1.0-impl \
 	android.hardware.sensors@1.0-service
+
+# Soong
+PRODUCT_SOONG_NAMESPACES += $(LOCAL_PATH)
 	
 # Touch
 PRODUCT_PACKAGES += \
