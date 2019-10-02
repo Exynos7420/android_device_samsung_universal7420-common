@@ -22,7 +22,6 @@ LOCAL_SRC_FILES := \
 LOCAL_SHARED_LIBRARIES := \
     liblog \
     libhidlbase \
-    libhidltransport \
     libutils \
     android.hardware.gnss@1.0 \
     libhardware
