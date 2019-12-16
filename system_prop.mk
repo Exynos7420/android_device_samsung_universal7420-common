@@ -127,3 +127,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	ro.adb.nonblocking_ffs=0 \
 	persist.adb.nonblocking_ffs=0 \
 	sys.usb.ffs.aio_compat=1
+
+#
+# LMKD
+#
+PRODUCT_PROPERTY_OVERRIDES += \
+	ro.lmk.log_stats=true \
+	ro.lmk.use_psi=false
