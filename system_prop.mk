@@ -149,3 +149,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
 	ro.soc.manufacturer=Samsung \
 	ro.soc.model=Exynos 7420
+
+#
+# LMKD
+#
+PRODUCT_PROPERTY_OVERRIDES += \
+	ro.lmk.log_stats=true \
+	ro.lmk.use_psi=false
