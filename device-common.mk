@@ -68,6 +68,7 @@ PRODUCT_PACKAGES += \
 	android.hardware.audio.common@5.0-util \
 	android.hardware.audio.common@5.0 \
 	audio.primary.universal7420 \
+	audio.primary.universal7420_32 \
 	audio.a2dp.default \
 	audio.r_submix.default \
 	audio.usb.default \
