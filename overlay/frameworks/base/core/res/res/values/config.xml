@@ -18,8 +18,9 @@
 -->
 
 <!-- These resources are around just to allow their values to be customized
-     for different hardware and product builds. -->
-<resources>
+     for different hardware and product builds.  Do not translate.
+     NOTE: The naming convention is "config_camelCaseValue". Some legacy
+     entries do not follow the convention, but all new entries should. -->
 
     <!-- This string array should be overridden by the device to present a list of network
          attributes.  This is used by the connectivity manager to decide which networks can coexist
@@ -60,7 +61,7 @@
     </string-array>
 	
 	<string name="config_radio_access_family">GSM|WCDMA|LTE</string>
-
+	
     <!-- List of regexpressions describing the interface (if any) that represent tetherable
          USB interfaces.  If the device doesn't want to support tething over USB this should
          be empty.  An example would be "usb.*" -->
@@ -260,7 +261,9 @@
     <!-- Whether UI for multi user should be shown -->
     <bool name="config_enableMultiUserUI">true</bool>
 
-    <!-- reference volume index for music stream to limit headphone volume and display warning -->
+    <!-- Safe headphone volume index. When music stream volume is below this index
+         the SPL on headphone output is compliant to EN 60950 requirements for portable music
+         players. -->
     <integer name="config_safe_media_volume_index">17</integer>
 
     <!-- Configure mobile tcp buffer sizes in the form:
@@ -322,7 +325,13 @@ Add a comment to this line
     <!-- Doze (Ambient display) -->
     <string name="config_dozeComponent">com.android.systemui/com.android.systemui.doze.DozeService</string>
 
-    <!-- Permit doze mode to operate -->
+    <!-- Set this to true to enable the platform's auto-power-save modes like doze and
+         app standby.  These are not enabled by default because they require a standard
+         cloud-to-device messaging service for apps to interact correctly with the modes
+         (such as to be able to deliver an instant message to the device even when it is
+         dozing).  This should be enabled if you have such services and expect apps to
+         correctly use them when installed on your device.  Otherwise, keep this disabled
+         so that applications can still use their own mechanisms. -->
     <bool name="config_enableAutoPowerModes">true</bool>
 
     <!-- If this is true, the screen will fade off. -->
