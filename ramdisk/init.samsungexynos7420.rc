@@ -693,3 +693,6 @@ on property:sys.boot_completed=1
 
     swapon_all /vendor/etc/fstab.samsungexynos7420
     write /proc/sys/vm/swappiness 100
+
+    # Reinit lmkd to reconfigure lmkd properties
+    setprop lmkd.reinit 1
