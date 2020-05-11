@@ -15,3 +15,6 @@
 #
 
 LOCAL_PATH := device/samsung/universal7420-common
+
+# call the proprietary setup
+$(call inherit-product, vendor/samsung/universal7420-common/universal7420-common-vendor.mk)
