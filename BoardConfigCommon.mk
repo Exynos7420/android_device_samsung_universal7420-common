@@ -148,6 +148,9 @@ BOARD_USES_CEC := true
 BOARD_HAS_LARGE_FILESYSTEM := true
 TARGET_USERIMAGES_USE_EXT4 := true
 
+# Seccomp filters
+BOARD_SECCOMP_POLICY += device/samsung/zero-common/seccomp
+
 # Vendor separation
 TARGET_COPY_OUT_VENDOR := system/vendor
 
