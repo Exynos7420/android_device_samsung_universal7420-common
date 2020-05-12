@@ -87,6 +87,10 @@ PRODUCT_PACKAGES += \
     libfimg \
     libhwc2on1adapter \
     libion
+    
+# RenderScript
+PRODUCT_PACKAGES += \
+    android.hardware.renderscript@1.0-impl
 
 # Wifi
 PRODUCT_PACKAGES += \
