@@ -33,6 +33,9 @@ TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := cortex-a53
 TARGET_NR_CPUS := 8
 
+# Audio
+TARGET_AUDIOHAL_VARIANT := samsung
+
 # Binder
 TARGET_USES_64_BIT_BINDER := true
 
