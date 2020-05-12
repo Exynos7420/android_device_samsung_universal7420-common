@@ -88,6 +88,11 @@ PRODUCT_PACKAGES += \
     libhwc2on1adapter \
     libion
     
+# Memory
+PRODUCT_PACKAGES += \
+    memtrack.exynos5 \
+    android.hardware.memtrack@1.0-impl
+    
 # RenderScript
 PRODUCT_PACKAGES += \
     android.hardware.renderscript@1.0-impl
