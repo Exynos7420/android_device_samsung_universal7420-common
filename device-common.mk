@@ -96,6 +96,11 @@ PRODUCT_PACKAGES += \
     libhwc2on1adapter \
     libion
     
+# Health
+PRODUCT_PACKAGES += \
+    android.hardware.health@2.0-impl \
+    android.hardware.health@2.0-service
+    
 # Memory
 PRODUCT_PACKAGES += \
     memtrack.exynos5 \
