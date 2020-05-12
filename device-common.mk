@@ -29,6 +29,21 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/audio/audio_policy.conf:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy.conf \
     $(LOCAL_PATH)/configs/audio/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml
+    
+# Wifi
+PRODUCT_PACKAGES += \
+    hostapd \
+    libnetcmdiface \
+    libwpa_client \
+    macloader \
+    wificond \
+    wifiloader \
+    wifilogd \
+    wlutil \
+    wpa_supplicant \
+    wpa_supplicant.conf \
+    android.hardware.wifi@1.0-impl \
+    android.hardware.wifi@1.0-service
 
 # call Samsung LSI board support package
 $(call inherit-product, hardware/samsung_slsi/exynos5/exynos5.mk)
