@@ -39,6 +39,12 @@ TARGET_AUDIOHAL_VARIANT := samsung
 # Binder
 TARGET_USES_64_BIT_BINDER := true
 
+# Bluetooth
+BOARD_CUSTOM_BT_CONFIG := $(LOCAL_PATH)/configs/bluetooth/libbt_vndcfg.txt
+BOARD_HAVE_BLUETOOTH := true
+BOARD_HAVE_BLUETOOTH_BCM := true
+BOARD_HAVE_SAMSUNG_BLUETOOTH := true
+
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := universal7420
 TARGET_NO_BOOTLOADER := true
