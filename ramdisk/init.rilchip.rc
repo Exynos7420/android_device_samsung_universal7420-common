@@ -1,0 +1,69 @@
+#
+# Copyright (C) 2012 The Android Open Source Project
+# Copyright (C) 2016 The CyanogenMod Project
+# Copyright (C) 2017 TeamNexus
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+
+#
+# Assign TCP buffer thresholds to be ceiling value of technology maximums
+# Increased technology maximums should be reflected here.
+#
+on early-boot
+	write /proc/sys/net/core/rmem_max 2097152
+	write /proc/sys/net/core/wmem_max 2097152
+
+#
+# Set properties required for proper dual-SIM support
+#
+on init
+	exec u:r:su:s0 root root -- /system/bin/sh /init.rilchip.sh init
+
+on post-fs-data
+	# Disable extensive modem driver debugging/dumping messages
+	write /sys/module/modem_utils/parameters/dflags "0"
+	write /sys/module/modem_utils/parameters/ipc_log_level "0"
+
+	# Primary RIL service launch point
+	exec u:r:su:s0 root root -- /system/bin/sh /init.rilchip.sh start
+
+#
+# Stop all RIL daemons if cbd goes down unexepcted
+#
+on property:persist.sys.cpboot=disable
+	exec u:r:su:s0 root root -- /system/bin/sh /init.rilchip.sh stop
+
+#
+# Start all RIL daemons if a property-change requests it
+#
+on property:ro.radio.noril=no
+	exec u:r:su:s0 root root -- /system/bin/sh /init.rilchip.sh start
+
+#
+# Stop all RIL daemons if a property-change requests it
+#
+on property:ro.radio.noril=yes
+	exec u:r:su:s0 root root -- /system/bin/sh /init.rilchip.sh stop
+
+#
+# Properly restart RIL-service if the device just got decrypted
+#
+on property:vold.decrypt=trigger_post_fs_data
+	exec u:r:su:s0 root root -- /system/bin/sh /init.rilchip.sh restart
+
+#
+# Run late-init commands for final ro.radio.noril-checks
+#
+on property:init.svc.bootanim=stopped
+	exec u:r:su:s0 root root -- /system/bin/sh /init.rilchip.sh late-init

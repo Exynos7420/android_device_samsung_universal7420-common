@@ -112,6 +112,18 @@ PRODUCT_PACKAGES += \
     
 # Properties 
 TARGET_SYSTEM_PROP += $(LOCAL_PATH)/system.prop
+
+# Ramdisk
+PRODUCT_PACKAGES += \
+    fstab.samsungexynos7420 \
+    init.baseband.rc \
+    init.battery.rc \
+    init.gps.rc \
+    init.power.rc \
+    init.samsungexynos7420.rc \
+    init.samsungexynos7420.usb.rc \
+    init.wifi.rc \
+    ueventd.samsungexynos7420.rc
     
 # RenderScript
 PRODUCT_PACKAGES += \
