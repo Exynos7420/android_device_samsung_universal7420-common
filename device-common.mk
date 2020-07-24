@@ -104,6 +104,13 @@ PRODUCT_PACKAGES += \
     
 # Properties 
 TARGET_SYSTEM_PROP += $(LOCAL_PATH)/system.prop
+
+# Ramdisk
+PRODUCT_PACKAGES += \
+    init.battery.rc \
+    init.power.rc \
+    init.samsungexynos7420.usb.rc \
+    init.wifi.rc
     
 # RenderScript
 PRODUCT_PACKAGES += \

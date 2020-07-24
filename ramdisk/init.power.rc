@@ -1,0 +1,185 @@
+on init
+
+    # change own for camera preview lagging
+    chown system system /sys/kernel/hmp/down_threshold
+
+    # set permission to 0660 for camera preview lagging
+    chmod 0660 /sys/kernel/hmp/down_threshold
+
+on boot
+
+    # cpusets
+    write /dev/cpuset/foreground/cpus 0-7
+    write /dev/cpuset/background/cpus 0-4
+    write /dev/cpuset/system-background/cpus 0-4
+    write /dev/cpuset/top-app/cpus 4-7
+
+    # Change permission for dvfshelper
+    chown radio system /sys/power/cpufreq_table
+    chmod 0664 /sys/power/cpufreq_table
+    chown radio system /sys/power/cpufreq_min_limit
+    chmod 0664 /sys/power/cpufreq_min_limit
+    chown radio system /sys/power/cpufreq_max_limit
+    chmod 0664 /sys/power/cpufreq_max_limit
+
+    chown radio system /sys/devices/system/cpu/kernel_max
+    chmod 0664 /sys/devices/system/cpu/kernel_max
+
+    # PMS DVFS
+    chown radio system /sys/power/enable_dm_hotplug
+    chmod 0664 /sys/power/enable_dm_hotplug
+    chown bluetooth system /sys/power/cluster0_core_hotplug_in
+    chmod 0664 /sys/power/cluster0_core_hotplug_in
+
+    chown radio system /sys/power/ipa/control_temp
+    chmod 0664 /sys/power/ipa/control_temp
+    chown radio system /sys/power/ipa/hotplug_out_threshold
+    chmod 0664 /sys/power/ipa/hotplug_out_threshold
+
+    # Change permissions for the CPU governor settings
+    chown system system /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
+    chown system system /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
+    chown system system /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
+    chown system system /sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq
+    chmod 0664 /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
+    chmod 0664 /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
+    chmod 0664 /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
+    chmod 0664 /sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq
+    chown system system /sys/devices/system/cpu/cpu4/cpufreq/scaling_max_freq
+    chown system system /sys/devices/system/cpu/cpu4/cpufreq/scaling_min_freq
+    chown system system /sys/devices/system/cpu/cpu4/cpufreq/scaling_governor
+    chown system system /sys/devices/system/cpu/cpu4/cpufreq/scaling_cur_freq
+    chmod 0664 /sys/devices/system/cpu/cpu4/cpufreq/scaling_max_freq
+    chmod 0664 /sys/devices/system/cpu/cpu4/cpufreq/scaling_min_freq
+    chmod 0664 /sys/devices/system/cpu/cpu4/cpufreq/scaling_governor
+    chmod 0664 /sys/devices/system/cpu/cpu4/cpufreq/scaling_cur_freq
+
+    # change permissions for all cpusets we touch at runtime
+    chown system system /dev/cpuset/cpus
+    chown system system /dev/cpuset/foreground/cpus
+    chown system system /dev/cpuset/background/cpus
+    chown system system /dev/cpuset/system-background/cpus
+    chown system system /dev/cpuset/top-app/cpus
+    chmod 0664 /dev/cpuset/cpus
+    chmod 0664 /dev/cpuset/foreground/cpus
+    chmod 0664 /dev/cpuset/background/cpus
+    chmod 0664 /dev/cpuset/system-background/cpus
+    chmod 0664 /dev/cpuset/top-app/cpus
+
+    chown radio system /sys/devices/platform/exynos7-devfreq-mif/devfreq/exynos7-devfreq-mif/available_frequencies
+    chmod 0664 /sys/devices/platform/exynos7-devfreq-mif/devfreq/exynos7-devfreq-mif/available_frequencies
+    chown radio system /sys/devices/platform/exynos7-devfreq-mif/devfreq/exynos7-devfreq-mif/min_freq
+    chmod 0664 /sys/devices/platform/exynos7-devfreq-mif/devfreq/exynos7-devfreq-mif/min_freq
+    chown radio system /sys/devices/platform/exynos7-devfreq-mif/devfreq/exynos7-devfreq-mif/max_freq
+    chmod 0664 /sys/devices/platform/exynos7-devfreq-mif/devfreq/exynos7-devfreq-mif/max_freq
+    chown radio system /sys/devices/platform/exynos7-devfreq-int/devfreq/exynos7-devfreq-int/available_frequencies
+    chmod 0664 /sys/devices/platform/exynos7-devfreq-int/devfreq/exynos7-devfreq-int/available_frequencies
+    chown radio system /sys/devices/platform/exynos7-devfreq-int/devfreq/exynos7-devfreq-int/min_freq
+    chmod 0664 /sys/devices/platform/exynos7-devfreq-int/devfreq/exynos7-devfreq-int/min_freq
+    chown radio system /sys/devices/platform/exynos7-devfreq-int/devfreq/exynos7-devfreq-int/max_freq
+    chmod 0664 /sys/devices/platform/exynos7-devfreq-int/devfreq/exynos7-devfreq-int/max_freq
+    chown radio system /sys/devices/platform/exynos7-devfreq-isp/devfreq/exynos7-devfreq-isp/available_frequencies
+    chmod 0664 /sys/devices/platform/exynos7-devfreq-isp/devfreq/exynos7-devfreq-isp/available_frequencies
+    chown radio system /sys/devices/platform/exynos7-devfreq-isp/devfreq/exynos7-devfreq-isp/min_freq
+    chmod 0664 /sys/devices/platform/exynos7-devfreq-isp/devfreq/exynos7-devfreq-isp/min_freq
+    chown radio system /sys/devices/platform/exynos7-devfreq-isp/devfreq/exynos7-devfreq-isp/max_freq
+    chmod 0664 /sys/devices/platform/exynos7-devfreq-isp/devfreq/exynos7-devfreq-isp/max_freq
+
+    chown radio system /sys/devices/14ac0000.mali/dvfs
+    chmod 0664 /sys/devices/14ac0000.mali/dvfs
+    chown radio system /sys/devices/14ac0000.mali/dvfs_table
+    chmod 0664 /sys/devices/14ac0000.mali/dvfs_table
+    chown radio system /sys/devices/14ac0000.mali/dvfs_governor
+    chmod 0664 /sys/devices/14ac0000.mali/dvfs_governor
+    chown radio system /sys/devices/14ac0000.mali/dvfs_min_lock
+    chmod 0664 /sys/devices/14ac0000.mali/dvfs_min_lock
+    chown radio system /sys/devices/14ac0000.mali/dvfs_max_lock
+    chmod 0664 /sys/devices/14ac0000.mali/dvfs_max_lock
+    chown radio system /sys/devices/14ac0000.mali/highspeed_clock
+    chmod 0664 /sys/devices/14ac0000.mali/highspeed_clock
+    chown radio system /sys/devices/14ac0000.mali/highspeed_load
+    chmod 0664 /sys/devices/14ac0000.mali/highspeed_load
+
+    chown radio system /sys/devices/system/sec_os_ctrl/migrate_os
+    chmod 0664 /sys/devices/system/sec_os_ctrl/migrate_os
+
+    chown radio system /sys/module/cpuidle/parameters/off
+    chmod 0664 /sys/module/cpuidle/parameters/off
+
+    # HMP Status
+    chown system system /sys/kernel/hmp/load_avg_period_ms
+    chmod 0660 /sys/kernel/hmp/load_avg_period_ms
+    chown system system /sys/kernel/hmp/up_threshold
+    chmod 0660 /sys/kernel/hmp/up_threshold
+    chown system system /sys/kernel/hmp/down_threshold
+    chmod 0660 /sys/kernel/hmp/down_threshold
+
+    # HMP Little Packing
+    chown system system /sys/kernel/hmp/packing_enable
+    chmod 0660 /sys/kernel/hmp/packing_enable
+    chown system system /sys/kernel/hmp/packing_limit
+    chmod 0660 /sys/kernel/hmp/packing_limit
+
+    # Assume HMP uses shared cpufreq policy for all LITTLE CPUs
+    chown system system /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
+    chmod 0660 /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
+
+    chown system system sys/devices/system/cpu/cpufreq/mp-cpufreq/cluster0_max_freq
+    chmod 0660 sys/devices/system/cpu/cpufreq/mp-cpufreq/cluster0_max_freq
+    chown system system sys/devices/system/cpu/cpufreq/mp-cpufreq/boot_low_freq
+    chmod 0660 sys/devices/system/cpu/cpufreq/mp-cpufreq/boot_low_freq
+
+    # Assume HMP uses shared cpufreq policy for big CPUs
+    chown system system /sys/devices/system/cpu/cpu4/cpufreq/scaling_max_freq
+    chmod 0660 /sys/devices/system/cpu/cpu4/cpufreq/scaling_max_freq
+
+    # LITTLE cluster high load
+    chown system system /sys/class/sec/sec_slow/timer_rate
+    chmod 0660 /sys/class/sec/sec_slow/timer_rate
+    chown system system /sys/class/sec/sec_slow/io_is_busy
+    chmod 0660 /sys/class/sec/sec_slow/io_is_busy
+    chown system system /sys/class/sec/sec_slow/slow_mode
+    chmod 0660 /sys/class/sec/sec_slow/slow_mode
+    chown system system /sys/class/sec/sec_slow/enforced_slow_mode
+    chmod 0660 /sys/class/sec/sec_slow/enforced_slow_mode
+    chown system system /sys/class/sec/sec_slow/full_enter_load
+    chmod 0660 /sys/class/sec/sec_slow/full_enter_load
+    chown system system /sys/class/sec/sec_slow/full_enter_load_fast
+    chmod 0660 /sys/class/sec/sec_slow/full_enter_load_fast
+    chown system system /sys/class/sec/sec_slow/full_exit_load
+    chmod 0660 /sys/class/sec/sec_slow/full_exit_load
+    chown system system /sys/class/sec/sec_slow/full_exit_load_fast
+    chmod 0660 /sys/class/sec/sec_slow/full_exit_load_fast
+    chown system system /sys/class/sec/sec_slow/full_enter_time
+    chmod 0660 /sys/class/sec/sec_slow/full_enter_time
+    chown system system /sys/class/sec/sec_slow/full_exit_time
+    chmod 0660 /sys/class/sec/sec_slow/full_exit_time
+
+    # MSP Core Status
+    chown system system /sys/devices/system/cpu/cpu0/online
+    chmod 0664 /sys/devices/system/cpu/cpu0/online
+    chown system system /sys/devices/system/cpu/cpu1/online
+    chmod 0664 /sys/devices/system/cpu/cpu1/online
+    chown system system /sys/devices/system/cpu/cpu2/online
+    chmod 0664 /sys/devices/system/cpu/cpu2/online
+    chown system system /sys/devices/system/cpu/cpu3/online
+    chmod 0664 /sys/devices/system/cpu/cpu3/online
+    chown system system /sys/devices/system/cpu/cpu4/online
+    chmod 0664 /sys/devices/system/cpu/cpu4/online
+    chown system system /sys/devices/system/cpu/cpu5/online
+    chmod 0664 /sys/devices/system/cpu/cpu5/online
+    chown system system /sys/devices/system/cpu/cpu6/online
+    chmod 0664 /sys/devices/system/cpu/cpu6/online
+    chown system system /sys/devices/system/cpu/cpu7/online
+    chmod 0664 /sys/devices/system/cpu/cpu7/online
+
+    # Kernel Workqueue
+    chown system system /sys/module/workqueue/parameters/power_efficient
+    chmod 0644 /sys/module/workqueue/parameters/power_efficient
+
+    # CPU Idle
+    chown system system /sys/module/cpuidle_exynos64/parameters/enable_mask
+
+    # DT2W Permissions
+    chown system system /sys/class/dt2w/enabled
+    chmod 0644 /sys/class/dt2w/enabled
