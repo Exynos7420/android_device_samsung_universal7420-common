@@ -85,8 +85,13 @@ PRODUCT_PACKAGES += \
     
 # DTB
 PRODUCT_HOST_PACKAGES += \
-	dtbhtoolExynos
+    dtbhtoolExynos
 
+# GNSS
+PRODUCT_PACKAGES += \
+    android.hardware.gnss@1.0-impl \
+    android.hardware.gnss@1.0-service
+    
 # Graphics
 PRODUCT_PACKAGES += \
     android.hardware.graphics.allocator@2.0-impl \
