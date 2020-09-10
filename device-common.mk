@@ -133,6 +133,11 @@ PRODUCT_PACKAGES += \
 	android.hardware.health@2.0-impl \
 	android.hardware.health@2.0-service
 
+# HIDL
+PRODUCT_PACKAGES += \
+	libhidltransport \
+	libhwbinder
+
 # Gatekeeper
 PRODUCT_PACKAGES += \
     android.hardware.gatekeeper@1.0-service.software
