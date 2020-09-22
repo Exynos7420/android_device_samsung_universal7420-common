@@ -140,7 +140,7 @@ BOARD_USES_TRUST_KEYMASTER := true
 # Mediaserver-shim
 TARGET_LD_SHIM_LIBS += \
     /system/bin/mediaserver|/vendor/lib/libstagefright_shim.so
-    
+
 # MEMFD
 TARGET_HAS_MEMFD_BACKPORT := true
 
@@ -155,6 +155,13 @@ TARGET_SLSI_VARIANT := bsp
 
 # Radio
 BOARD_PROVIDES_LIBRIL := true
+
+# Ril - Shim
+TARGET_LD_SHIM_LIBS += \
+	/vendor/lib/libsec-ril.so|/vendor/lib/libcutils_shim.so \
+	/vendor/lib/libsec-ril-dsds.so|/vendor/lib/libcutils_shim.so \
+	/vendor/lib64/libsec-ril.so|/vendor/lib64/libcutils_shim.so \
+        /vendor/lib64/libsec-ril-dsds.so|/vendor/lib64/libcutils_shim.so
 
 # Root extra folders
 BOARD_ROOT_EXTRA_FOLDERS += efs
