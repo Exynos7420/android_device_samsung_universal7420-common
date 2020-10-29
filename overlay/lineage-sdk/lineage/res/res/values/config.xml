@@ -95,6 +95,14 @@
          config to 7. -->
     <integer name="config_deviceHardwareWakeKeys">1</integer> 
 
+    <!-- Button backlight control. Possible values are:
+            0 - Not supported
+            1 - Supported, but only on/off mode
+            2 - Supported with variable brightness control
+    -->
+    <integer name="config_deviceSupportsButtonBrightnessControl">1</integer>
+
+
     <!-- Indicate whether encryption causes significant performances loss.
          This MUST NOT be set to true on devices produced in 2016 or later -->
     <bool name="config_trustLegacyEncryption">true</bool>
