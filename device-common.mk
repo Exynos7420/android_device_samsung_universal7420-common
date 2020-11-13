@@ -129,6 +129,10 @@ PRODUCT_PACKAGES += \
     memtrack.exynos5 \
     android.hardware.memtrack@1.0-impl
     
+# Power
+PRODUCT_PACKAGES += \
+	android.hardware.power@1.0-service.exynos
+
 # Properties 
 TARGET_SYSTEM_PROP += $(LOCAL_PATH)/system.prop
 
