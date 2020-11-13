@@ -114,6 +114,10 @@ PRODUCT_PACKAGES += \
 	keystore.exynos5 \
 	android.hardware.keymaster@3.0-impl \
 	android.hardware.keymaster@3.0-service
+	
+# Lights
+PRODUCT_PACKAGES += \
+	android.hardware.light@2.0-service.samsung
     
 # Memory
 PRODUCT_PACKAGES += \
