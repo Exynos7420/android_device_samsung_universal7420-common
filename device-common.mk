@@ -172,6 +172,11 @@ PRODUCT_COPY_FILES += \
 # Stagefright-shim
 PRODUCT_PACKAGES += \
 	libstagefright_shim
+	
+# Vibrator
+PRODUCT_PACKAGES += \
+	android.hardware.vibrator@1.0-impl \
+	android.hardware.vibrator@1.0-service
 
 # Wifi
 PRODUCT_PACKAGES += \
