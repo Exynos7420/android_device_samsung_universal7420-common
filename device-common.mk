@@ -106,7 +106,8 @@ PRODUCT_HOST_PACKAGES += \
 	
 # Fingerprint
 PRODUCT_PACKAGES += \
-	android.hardware.biometrics.fingerprint@2.1-service.samsung
+	android.hardware.biometrics.fingerprint@2.1-service.samsung \
+	libbauthtzcommon_shim
 
 # GNSS
 PRODUCT_PACKAGES += \

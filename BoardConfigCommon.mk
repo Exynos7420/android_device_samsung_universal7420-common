@@ -76,6 +76,10 @@ BOARD_USES_FIMGAPI_V5X := true
 TARGET_SEC_FP_CALL_NOTIFY_ON_CANCEL := true
 TARGET_SEC_FP_USES_PERCENTAGE_SAMPLES := true
 
+# Fingerprint-shims
+TARGET_LD_SHIM_LIBS += \
+	/system/lib64/libbauthserver.so|/vendor/lib64/libbauthtzcommon_shim.so
+
 # Gralloc
 BOARD_USES_EXYNOS5_COMMON_GRALLOC := true
 
@@ -124,7 +128,7 @@ BOARD_USES_TRUST_KEYMASTER := true
 
 # Mediaserver-shim
 TARGET_LD_SHIM_LIBS += \
-    /system/bin/mediaserver|/vendor/lib/libstagefright_shim.so
+	/system/bin/mediaserver|/vendor/lib/libstagefright_shim.so
 
 # Platform
 BOARD_VENDOR := samsung
@@ -192,3 +196,4 @@ WIFI_DRIVER_FW_PATH_PARAM        := "/sys/module/dhd/parameters/firmware_path"
 WIFI_DRIVER_FW_PATH_STA          := "/system/vendor/etc/wifi/bcmdhd_sta.bin"
 WIFI_DRIVER_FW_PATH_AP           := "/system/vendor/etc/wifi/bcmdhd_apsta.bin"
 WIFI_BAND                        := 802_11_ABG
+
