@@ -142,6 +142,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
 	memtrack.exynos5 \
 	android.hardware.memtrack@1.0-impl
+	
+# Overlays
+DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
 # Power
 PRODUCT_PACKAGES += \
