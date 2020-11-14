@@ -125,6 +125,9 @@ TARGET_BOARD_PLATFORM := exynos5
 TARGET_SOC := exynos7420
 TARGET_SLSI_VARIANT := cm
 
+# Radio
+BOARD_PROVIDES_LIBRIL := true
+
 # Root extra folders
 BOARD_ROOT_EXTRA_FOLDERS += efs
 TARGET_FS_CONFIG_GEN := $(LOCAL_PATH)/config.fs
