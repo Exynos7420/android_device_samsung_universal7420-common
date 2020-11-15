@@ -115,7 +115,7 @@ PRODUCT_PACKAGES += \
 # DTB
 PRODUCT_HOST_PACKAGES += \
 	dtbhtoolExynos
-	
+
 # Fingerprint
 PRODUCT_PACKAGES += \
 	android.hardware.biometrics.fingerprint@2.1-service.samsung \
@@ -125,7 +125,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
 	android.hardware.gnss@1.0-impl.universal7420 \
 	android.hardware.gnss@1.0-service
-	
+
 PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/configs/sensors/gps.xml:system/etc/gps.xml
 
@@ -173,7 +173,7 @@ PRODUCT_COPY_FILES += \
 	frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
 	frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \
 	frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml
-	
+
 # NFC
 PRODUCT_PACKAGES += \
 	libnfc-nci \
@@ -183,13 +183,13 @@ PRODUCT_PACKAGES += \
 	com.android.nfc_extras \
 	android.hardware.nfc@1.0-impl \
 	android.hardware.nfc@1.0-service
-	
+
 PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/configs/nfc/nfcee_access.xml:system/etc/nfcee_access.xml \
 	$(LOCAL_PATH)/configs/nfc/libnfc-sec-hal.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-sec-hal.conf \
 	$(LOCAL_PATH)/configs/nfc/libnfc-sec.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-sec.conf \
 	$(LOCAL_PATH)/configs/nfc/libnfc-brcm.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-nci.conf
-	
+
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
@@ -198,7 +198,7 @@ PRODUCT_PACKAGES += \
 	android.hardware.power@1.0-service.exynos
 
 # Properties
-TARGET_SYSTEM_PROP += $(LOCAL_PATH)/system.prop
+-include $(LOCAL_PATH)/system_prop.mk
 
 # Radio
 PRODUCT_PACKAGES += \
@@ -228,7 +228,7 @@ PRODUCT_PACKAGES += \
 # RenderScript
 PRODUCT_PACKAGES += \
 	android.hardware.renderscript@1.0-impl
-	
+
 # SamsungDoze
 PRODUCT_PACKAGES += \
 	SamsungDoze
@@ -245,7 +245,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/configs/init/android.hardware.sensors@1.0-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.sensors@1.0-service.rc \
 	$(LOCAL_PATH)/configs/sensors/lhd.conf:system/etc/lhd.conf
-	
+
 # Skeletons
 PRODUCT_PACKAGES += \
 	android.hidl.base@1.0
@@ -256,14 +256,14 @@ PRODUCT_SOONG_NAMESPACES += $(LOCAL_PATH)
 # Stagefright-shim
 PRODUCT_PACKAGES += \
 	libstagefright_shim
-	
+
 PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/configs/init/mediaserver.rc:system/etc/init/mediaserver.rc
-	
+
 # Touch
 PRODUCT_PACKAGES += \
 	vendor.lineage.touch@1.0-service.samsung
-	
+
 # Trust
 PRODUCT_PACKAGES += \
 	vendor.lineage.trust@1.0-service
