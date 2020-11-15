@@ -101,7 +101,7 @@ PRODUCT_PACKAGES += \
 # DTB
 PRODUCT_HOST_PACKAGES += \
 	dtbhtoolExynos
-	
+
 # Fingerprint
 PRODUCT_PACKAGES += \
 	android.hardware.biometrics.fingerprint@2.1-service.samsung
@@ -142,7 +142,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
 	memtrack.exynos5 \
 	android.hardware.memtrack@1.0-impl
-	
+
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
@@ -151,7 +151,7 @@ PRODUCT_PACKAGES += \
 	android.hardware.power@1.0-service.exynos
 
 # Properties
-TARGET_SYSTEM_PROP += $(LOCAL_PATH)/system.prop
+-include $(LOCAL_PATH)/system_prop.mk
 
 # Radio
 PRODUCT_PACKAGES += \
@@ -177,7 +177,7 @@ PRODUCT_PACKAGES += \
 # RenderScript
 PRODUCT_PACKAGES += \
 	android.hardware.renderscript@1.0-impl
-	
+
 # SamsungDoze
 PRODUCT_PACKAGES += \
 	SamsungDoze
@@ -197,11 +197,11 @@ PRODUCT_PACKAGES += \
 
 # Soong
 PRODUCT_SOONG_NAMESPACES += $(LOCAL_PATH)
-	
+
 # Touch
 PRODUCT_PACKAGES += \
 	vendor.lineage.touch@1.0-service.samsung
-	
+
 # Trust
 PRODUCT_PACKAGES += \
 	vendor.lineage.trust@1.0-service
