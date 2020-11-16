@@ -56,23 +56,16 @@ PRODUCT_COPY_FILES += \
 
 # Audio
 PRODUCT_PACKAGES += \
-	android.hardware.audio@2.0-impl \
-	android.hardware.audio@5.0-impl \
-	android.hardware.audio@2.0-service \
-	android.hardware.audio.effect@2.0-impl \
-	android.hardware.audio.effect@5.0-impl \
-	android.hardware.audio.common-util \
-	android.hardware.audio.common@2.0-util \
-	android.hardware.audio.common@2.0 \
-	android.hardware.audio.common@5.0-util \
-	android.hardware.audio.common@5.0 \
 	audio.primary.universal7420 \
 	audio.primary.universal7420_32 \
 	audio.a2dp.default \
 	audio.r_submix.default \
 	audio.usb.default \
+	tinymix \
 	libtinycompress \
-	tinymix
+	android.hardware.audio@2.0-impl \
+	android.hardware.audio@2.0-service \
+	android.hardware.audio.effect@2.0-impl
 
 PRODUCT_COPY_FILES += \
 	frameworks/av/services/audiopolicy/config/audio_policy_volumes.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_volumes.xml \
@@ -83,7 +76,7 @@ PRODUCT_COPY_FILES += \
 	frameworks/av/services/audiopolicy/config/usb_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/usb_audio_policy_configuration.xml \
 	$(LOCAL_PATH)/configs/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration.xml \
 	$(LOCAL_PATH)/configs/audio/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml
-	
+
 # Apex
 PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/configs/ld.config.txt:$(TARGET_COPY_OUT_SYSTEM)/etc/swcodec/ld.config.txt
