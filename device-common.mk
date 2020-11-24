@@ -138,7 +138,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
 	android.hardware.health@2.0-impl \
 	android.hardware.health@2.0-service
-	
+
 # Keylayouts
 PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/configs/keylayout/sec_touchkey.kl:system/usr/keylayout/sec_touchkey.kl \
@@ -233,6 +233,10 @@ PRODUCT_PACKAGES += \
 # SamsungDoze
 PRODUCT_PACKAGES += \
 	SamsungDoze
+
+# SamsungServiceMode
+PRODUCT_PACKAGES += \
+	SamsungServiceMode
 
 # Seccomp filters
 PRODUCT_COPY_FILES += \
