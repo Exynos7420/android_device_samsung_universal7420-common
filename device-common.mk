@@ -96,8 +96,7 @@ PRODUCT_PACKAGES += \
 
 # Configstore
 PRODUCT_PACKAGES += \
-	android.hardware.configstore@1.0-impl \
-	android.hardware.configstore@1.0-service
+	disable_configstore
 
 # Debugging
 -include $(LOCAL_PATH)/system_prop_debug.mk
