@@ -23,40 +23,56 @@ DEVICE_COMMON=universal7420-common
 MY_DIR="${BASH_SOURCE%/*}"
 if [[ ! -d "$MY_DIR" ]]; then MY_DIR="$PWD"; fi
 
-LINEAGE_ROOT="$MY_DIR"/../../..
+ANDROID_ROOT="${MY_DIR}/../../.."
 
-HELPER="$LINEAGE_ROOT"/vendor/lineage/build/tools/extract_utils.sh
-if [ ! -f "$HELPER" ]; then
-    echo "Unable to find helper script at $HELPER"
+HELPER="${ANDROID_ROOT}/tools/extract-utils/extract_utils.sh"
+if [ ! -f "${HELPER}" ]; then
+    echo "Unable to find helper script at ${HELPER}"
     exit 1
 fi
-. "$HELPER"
+source "${HELPER}"
 
-if [ $# -eq 0 ]; then
-  SRC=adb
-else
-  if [ $# -eq 1 ]; then
-    SRC=$1
-  else
-    echo "$0: bad number of arguments"
-    echo ""
-    echo "usage: $0 [PATH_TO_EXPANDED_ROM]"
-    echo ""
-    echo "If PATH_TO_EXPANDED_ROM is not specified, blobs will be extracted from"
-    echo "the device using adb pull."
-    exit 1
-  fi
+# Default to sanitizing the vendor folder before extraction
+CLEAN_VENDOR=true
+
+KANG=
+SECTION=
+
+while [ "${#}" -gt 0 ]; do
+    case "${1}" in
+        -n | --no-cleanup )
+                CLEAN_VENDOR=false
+                ;;
+        -k | --kang )
+                KANG="--kang"
+                ;;
+        -s | --section )
+                SECTION="${2}"; shift
+                CLEAN_VENDOR=false
+                ;;
+        * )
+                SRC="${1}"
+                ;;
+    esac
+    shift
+done
+
+if [ -z "${SRC}" ]; then
+    SRC="adb"
 fi
+
 
 # Initialize the helper
-setup_vendor "$DEVICE_COMMON" "$VENDOR" "$LINEAGE_ROOT" true
+setup_vendor "${DEVICE_COMMON}" "${VENDOR}" "${ANDROID_ROOT}" true "${CLEAN_VENDOR}"
 
-extract "$MY_DIR"/proprietary-files.txt "$SRC"
+extract "${MY_DIR}/proprietary-files.txt" "${SRC}" "${KANG}" --section "${SECTION}"
 
-BLOB_ROOT="$LINEAGE_ROOT"/vendor/"$VENDOR"/"$DEVICE_COMMON"/proprietary
+# Fix proprietary blobs
+BLOB_ROOT="$ANDROID_ROOT"/vendor/"$VENDOR"/"$DEVICE_COMMON"/proprietary
 
 patchelf --remove-needed vendor.samsung.hardware.nfc@1.0.so $BLOB_ROOT/vendor/lib/hw/nfc_nci.default.so
 patchelf --remove-needed vendor.samsung.hardware.nfc@1.0.so $BLOB_ROOT/vendor/lib64/hw/nfc_nci.default.so
 sed -i "s/\/system\/app/\/vendor\/app/g" $BLOB_ROOT/vendor/bin/mcDriverDaemon
 
-"$MY_DIR"/setup-makefiles.sh
+
+"${MY_DIR}/setup-makefiles.sh"
