@@ -103,6 +103,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_HOST_PACKAGES += \
 	dtbhtoolExynos
 
+# FastCharge
+PRODUCT_PACKAGES += \
+    vendor.lineage.fastcharge@1.0-service.samsung
+
 # Fingerprint
 PRODUCT_PACKAGES += \
 	android.hardware.biometrics.fingerprint@2.1-service.samsung \
