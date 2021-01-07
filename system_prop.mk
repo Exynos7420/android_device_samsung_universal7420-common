@@ -21,6 +21,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	ro.chipname=exynos7420 \
 	ro.arch=exynos7420
 
+# Charger
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.charger.enable_suspend=true
+
 #
 # Dalvik
 #
