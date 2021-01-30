@@ -169,7 +169,6 @@ TARGET_SLSI_VARIANT := bsp
 # Radio
 BOARD_MODEM_TYPE := ss333
 BOARD_PROVIDES_LIBRIL := true
-ENABLE_VENDOR_RIL_SERVICE := true
 
 # Recovery
 TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/ramdisk/fstab.samsungexynos7420.recovery

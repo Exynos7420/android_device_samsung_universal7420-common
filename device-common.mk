@@ -216,7 +216,8 @@ PRODUCT_PACKAGES += \
 	libsecnativefeature \
 	android.hardware.radio@1.0 \
 	android.hardware.radio.deprecated@1.0 \
-	modemloader
+	modemloader \
+	rild
 
 # Ramdisk
 PRODUCT_PACKAGES += \
