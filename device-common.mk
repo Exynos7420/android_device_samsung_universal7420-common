@@ -77,10 +77,6 @@ PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/configs/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration.xml \
 	$(LOCAL_PATH)/configs/audio/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml
 
-# Apex
-PRODUCT_COPY_FILES += \
-	$(LOCAL_PATH)/configs/ld.config.txt:$(TARGET_COPY_OUT_SYSTEM)/etc/swcodec/ld.config.txt
-
 # Bluetooth
 PRODUCT_PACKAGES += \
 	android.hardware.bluetooth@1.0-impl \
