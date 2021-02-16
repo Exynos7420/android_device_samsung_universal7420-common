@@ -144,6 +144,16 @@ PRODUCT_PACKAGES += \
 	memtrack.exynos5 \
 	android.hardware.memtrack@1.0-impl
 
+# NFC
+PRODUCT_PACKAGES += \
+	libnfc-nci \
+	libnfc_nci_jni \
+	NfcNci \
+	Tag \
+	com.android.nfc_extras \
+	android.hardware.nfc@1.0-impl \
+	android.hardware.nfc@1.0-service
+
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
