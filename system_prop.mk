@@ -55,8 +55,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # OMX
 #
 PRODUCT_PROPERTY_OVERRIDES += \
-	media.sf.omx-plugin=libffmpeg_omx.so,libsomxcore.so \
-	persist.media.treble_omx=false \
 	debug.stagefright.ccodec=0
 
 #
