@@ -191,6 +191,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
 	init.battery.rc \
 	init.power.rc \
+	init.samsungexynos7420.rc \
 	init.samsungexynos7420.usb.rc \
 	init.wifi.rc
 
