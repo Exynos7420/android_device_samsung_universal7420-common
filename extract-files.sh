@@ -57,5 +57,6 @@ BLOB_ROOT="$LINEAGE_ROOT"/vendor/"$VENDOR"/"$DEVICE_COMMON"/proprietary
 
 patchelf --remove-needed vendor.samsung.hardware.nfc@1.0.so $BLOB_ROOT/vendor/lib/hw/nfc_nci.default.so
 patchelf --remove-needed vendor.samsung.hardware.nfc@1.0.so $BLOB_ROOT/vendor/lib64/hw/nfc_nci.default.so
+sed -i "s/\/system\/app/\/vendor\/app/g" $BLOB_ROOT/vendor/bin/mcDriverDaemon
 
 "$MY_DIR"/setup-makefiles.sh
