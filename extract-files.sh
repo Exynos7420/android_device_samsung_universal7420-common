@@ -53,4 +53,9 @@ setup_vendor "$DEVICE_COMMON" "$VENDOR" "$LINEAGE_ROOT" true
 
 extract "$MY_DIR"/proprietary-files.txt "$SRC"
 
+BLOB_ROOT="$LINEAGE_ROOT"/vendor/"$VENDOR"/"$DEVICE_COMMON"/proprietary
+
+patchelf --remove-needed vendor.samsung.hardware.nfc@1.0.so $BLOB_ROOT/vendor/lib/hw/nfc_nci.default.so
+patchelf --remove-needed vendor.samsung.hardware.nfc@1.0.so $BLOB_ROOT/vendor/lib64/hw/nfc_nci.default.so
+
 "$MY_DIR"/setup-makefiles.sh

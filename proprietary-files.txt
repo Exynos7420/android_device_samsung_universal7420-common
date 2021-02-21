@@ -52,7 +52,3 @@ vendor/lib64/libMcRegistry.so
 # NFC - A810FXXU2CRL1 (O)
 vendor/lib/hw/nfc_nci.default.so|c6b2292323b827f3261ba33956604b90de8a29cd
 vendor/lib64/hw/nfc_nci.default.so|347836411179d98a47c7de7bf9e92ac00c5a742a
-vendor/lib/hw/vendor.samsung.hardware.nfc@1.0-impl.so|7ca2f7a0c3334db09c3b0d89a5ee6f6018efbf5d
-vendor/lib64/hw/vendor.samsung.hardware.nfc@1.0-impl.so|08e136b30cdecbce4527870cc7b170c27616c1b9
-vendor/lib/vendor.samsung.hardware.nfc@1.0.so|dc8b0f7e8598bf63c8162ea4bbf8f2478e944d77
-vendor/lib64/vendor.samsung.hardware.nfc@1.0.so|2ff2382b495e11e7690fb368922738df1a94cd19
