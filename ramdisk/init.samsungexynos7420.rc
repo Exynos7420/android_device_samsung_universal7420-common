@@ -141,13 +141,6 @@ on post-fs-data
     chown radio system /efs/mc/mc.dat
     chmod 0640 /efs/mc/mc.dat
 
-    # Professioanl Audio
-    mkdir /data/misc/jack 0770 jack system
-    mkdir /dev/socket/jack 0771 jack system
-
-    # Samsung Pay
-    mkdir /efs/pfw_data 0760 spay spay
-
     # h2k
     mkdir /efs/cpk 0771 radio system
     chmod 0644 /efs/redata.bin
@@ -176,10 +169,6 @@ on post-fs-data
     mkdir /dev/socket/uibc 0777 media system
     chown media system /dev/socket/uibc
     chmod 0775 /dev/socket/uibc
-
-    # Vibetonz 
-    chmod 0660 /dev/tspdrv 
-    chown vibe vibe /dev/tspdrv
 
     # for BT MAC address
     mkdir /efs/bluetooth 0775 radio system
@@ -583,7 +572,7 @@ on fs
     chown nfc nfc /dev/sec-nfc
 
     # MST/NFC Switch
-    chown spay system /dev/mst_ctrl
+    chown system system /dev/mst_ctrl
     chmod 0660 /dev/mst_ctrl
 
 #permission for TSP, Touchkey and Wacom
