@@ -54,14 +54,13 @@ PRODUCT_COPY_FILES += \
 
 # Audio
 PRODUCT_PACKAGES += \
-	audio.primary.universal7420 \
 	audio.primary.universal7420_32 \
 	audio.a2dp.default \
 	audio.r_submix.default \
 	audio.usb.default \
 	tinymix \
-	android.hardware.audio@2.0-impl \
-	android.hardware.audio.effect@2.0-impl
+	android.hardware.audio@2.0-impl:32 \
+	android.hardware.audio.effect@2.0-impl:32
 
 PRODUCT_COPY_FILES += \
 	frameworks/av/services/audiopolicy/config/audio_policy_volumes.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_volumes.xml \
