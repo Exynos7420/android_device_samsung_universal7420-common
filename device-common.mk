@@ -113,8 +113,7 @@ PRODUCT_PACKAGES += \
 
 # GNSS
 PRODUCT_PACKAGES += \
-	android.hardware.gnss@1.0-impl.universal7420 \
-	android.hardware.gnss@1.0-service
+	android.hardware.gnss@1.0-impl.universal7420
 
 # Graphics
 PRODUCT_PACKAGES += \
