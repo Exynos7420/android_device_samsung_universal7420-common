@@ -265,7 +265,8 @@ PRODUCT_PACKAGES += \
 	wpa_supplicant \
 	wpa_supplicant.conf \
 	android.hardware.wifi@1.0-impl \
-	android.hardware.wifi@1.0-service.legacy
+	android.hardware.wifi@1.0-service.legacy \
+	TetheringConfigOverlay
 
 # call Samsung LSI board support package
 $(call inherit-product, hardware/samsung_slsi/exynos5/exynos5.mk)
