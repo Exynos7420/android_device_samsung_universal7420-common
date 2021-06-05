@@ -102,6 +102,8 @@
     -->
     <integer name="config_deviceSupportsButtonBrightnessControl">1</integer>
 
+    <!-- Whether the device supports wireless charging or not -->
+    <bool name="config_deviceSupportsWirelessCharging">true</bool>
 
     <!-- Indicate whether encryption causes significant performances loss.
          This MUST NOT be set to true on devices produced in 2016 or later -->
