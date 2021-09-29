@@ -96,6 +96,13 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	audio_hal.force_voice_config=wide
 
 #
+# SOC
+#
+PRODUCT_PROPERTY_OVERRIDES += \
+	ro.soc.manufacturer=Samsung \
+	ro.soc.model=Exynos 7420
+
+#
 # Storage
 #
 PRODUCT_PROPERTY_OVERRIDES += \
