@@ -127,3 +127,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	ro.adb.nonblocking_ffs=0 \
 	persist.adb.nonblocking_ffs=0 \
 	sys.usb.ffs.aio_compat=1
+
+#
+# SOC
+#
+PRODUCT_PROPERTY_OVERRIDES += \
+	ro.soc.manufacturer=Samsung \
+	ro.soc.model=Exynos 7420
