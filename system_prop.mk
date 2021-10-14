@@ -22,6 +22,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	ro.arch=exynos7420
 
 #
+# BPF
+#
+PRODUCT_PROPERTY_OVERRIDES += \
+	ro.kernel.ebpf.supported=false
+
+#
 # Dalvik
 #
 PRODUCT_PROPERTY_OVERRIDES += \
