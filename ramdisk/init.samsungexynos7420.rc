@@ -19,8 +19,6 @@ on init
 
     symlink /data/app /factory
 
-    write /proc/sys/vm/page-cluster 0
-
 on post-fs-data
     setprop vold.post_fs_data_done 1
 
@@ -276,7 +274,6 @@ on boot
 
 on fs
     mount_all /fstab.samsungexynos7420
-    swapon_all /fstab.samsungexynos7420
 
 # Permissions for TouchScreen
     chown system radio /sys/class/sec/tsp/cmd
