@@ -234,10 +234,6 @@ PRODUCT_SOONG_NAMESPACES += $(LOCAL_PATH)
 PRODUCT_PACKAGES += \
 	libstagefright_shim
 
-# SSWAP - For swap
-PRODUCT_COPY_FILES += \
-	$(LOCAL_PATH)/prebuilt/sswap:$(TARGET_COPY_OUT_VENDOR)/bin/sswap
-
 # Touch
 # PRODUCT_PACKAGES += \
 # 	vendor.lineage.touch@1.0-service.samsung
