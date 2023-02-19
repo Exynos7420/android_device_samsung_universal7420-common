@@ -270,26 +270,21 @@ PRODUCT_PACKAGES += \
 
 # USB
 PRODUCT_PACKAGES += \
-	android.hardware.usb@1.0-impl \
 	android.hardware.usb@1.0-service.basic
 
 # Vibrator
 PRODUCT_PACKAGES += \
-	android.hardware.vibrator@1.0-service.samsung
+	android.hardware.vibrator-service.samsung
 
 # Wifi
 PRODUCT_PACKAGES += \
 	hostapd \
-	libnetcmdiface \
 	libwpa_client \
 	macloader \
 	wificond \
 	wifiloader \
-	wifilogd \
-	wlutil \
 	wpa_supplicant \
 	wpa_supplicant.conf \
-	android.hardware.wifi@1.0-impl \
 	android.hardware.wifi@1.0-service.legacy \
 	TetheringConfigOverlay \
 	WifiOverlay
