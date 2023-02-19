@@ -114,6 +114,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	ro.lineage.build.vendor_security_patch=2019-01-01
 
 #
+# VNDK
+#
+PRODUCT_PROPERTY_OVERRIDES += \
+	ro.vndk.version=21
+
+#
 # Wi-Fi
 #
 PRODUCT_PROPERTY_OVERRIDES += \
