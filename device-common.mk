@@ -245,7 +245,12 @@ PRODUCT_PACKAGES += \
 	android.hardware.sensors@1.0-service
 
 # Soong
-PRODUCT_SOONG_NAMESPACES += $(LOCAL_PATH)
+PRODUCT_SOONG_NAMESPACES += \
+    $(LOCAL_PATH) \
+    hardware/samsung \
+    hardware/google/interfaces \
+    hardware/google/pixel \
+    hardware/samsung/aidl/power-libperfmgr
 
 # Stagefright-shims
 PRODUCT_PACKAGES += \
