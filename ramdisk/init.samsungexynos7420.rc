@@ -1,10 +1,10 @@
-import init.samsungexynos7420.usb.rc
-import init.wifi.rc
-import init.baseband.rc
-import init.gps.rc
-import init.power.rc
-import init.battery.rc
-import init.target.rc
+import /vendor/etc/init/hw/init.samsungexynos7420.usb.rc
+import /vendor/etc/init/hw/init.wifi.rc
+import /vendor/etc/init/hw/init.baseband.rc
+import /vendor/etc/init/hw/init.gps.rc
+import /vendor/etc/init/hw/init.power.rc
+import /vendor/etc/init/hw/init.battery.rc
+import /vendor/etc/init/hw/init.target.rc
 
 on early-init
     mount debugfs /sys/kernel/debug /sys/kernel/debug mode=755
