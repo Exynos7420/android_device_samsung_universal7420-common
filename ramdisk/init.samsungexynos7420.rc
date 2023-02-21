@@ -209,6 +209,78 @@ on boot
     chown system system /sys/kernel/hmp/sb_down_threshold
     chown system system /sys/kernel/hmp/sb_up_threshold
 
+    # Change permission for interactive governor
+    # Cluster0 (Apollo)
+    chown system system /sys/devices/system/cpu/cpu0/cpufreq/interactive/timer_rate
+    chmod 0660 /sys/devices/system/cpu/cpu0/cpufreq/interactive/timer_rate
+    chown system system /sys/devices/system/cpu/cpu0/cpufreq/interactive/timer_slack
+    chmod 0660 /sys/devices/system/cpu/cpu0/cpufreq/interactive/timer_slack
+    chown system system /sys/devices/system/cpu/cpu0/cpufreq/interactive/min_sample_time
+    chmod 0660 /sys/devices/system/cpu/cpu0/cpufreq/interactive/min_sample_time
+    chown system system /sys/devices/system/cpu/cpu0/cpufreq/interactive/hispeed_freq
+    chmod 0660 /sys/devices/system/cpu/cpu0/cpufreq/interactive/hispeed_freq
+    chown system system /sys/devices/system/cpu/cpu0/cpufreq/interactive/target_loads
+    chmod 0660 /sys/devices/system/cpu/cpu0/cpufreq/interactive/target_loads
+    chown system system /sys/devices/system/cpu/cpu0/cpufreq/interactive/go_hispeed_load
+    chmod 0660 /sys/devices/system/cpu/cpu0/cpufreq/interactive/go_hispeed_load
+    chown system system /sys/devices/system/cpu/cpu0/cpufreq/interactive/above_hispeed_delay
+    chmod 0660 /sys/devices/system/cpu/cpu0/cpufreq/interactive/above_hispeed_delay
+    chown system system /sys/devices/system/cpu/cpu0/cpufreq/interactive/boost
+    chmod 0660 /sys/devices/system/cpu/cpu0/cpufreq/interactive/boost
+    chown system system /sys/devices/system/cpu/cpu0/cpufreq/interactive/boostpulse
+    chown system system /sys/devices/system/cpu/cpu0/cpufreq/interactive/input_boost
+    chmod 0660 /sys/devices/system/cpu/cpu0/cpufreq/interactive/input_boost
+    chown system system /sys/devices/system/cpu/cpu0/cpufreq/interactive/boostpulse_duration
+    chmod 0660 /sys/devices/system/cpu/cpu0/cpufreq/interactive/boostpulse_duration
+    chown system system /sys/devices/system/cpu/cpu0/cpufreq/interactive/io_is_busy
+    chmod 0660 /sys/devices/system/cpu/cpu0/cpufreq/interactive/io_is_busy
+
+    # Assume HMP uses shared cpufreq policy for all LITTLE CPUs
+    chown system system /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
+    chmod 0660 /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
+
+    chown system system sys/devices/system/cpu/cpufreq/mp-cpufreq/cluster0_max_freq
+    chmod 0660 sys/devices/system/cpu/cpufreq/mp-cpufreq/cluster0_max_freq
+    chown system system sys/devices/system/cpu/cpufreq/mp-cpufreq/boot_low_freq
+    chmod 0660 sys/devices/system/cpu/cpufreq/mp-cpufreq/boot_low_freq
+
+    # Cluster1 (Atlas)
+    chown system system /sys/devices/system/cpu/cpu4/cpufreq/interactive/timer_rate
+    chmod 0660 /sys/devices/system/cpu/cpu4/cpufreq/interactive/timer_rate
+    chown system system /sys/devices/system/cpu/cpu4/cpufreq/interactive/timer_slack
+    chmod 0660 /sys/devices/system/cpu/cpu4/cpufreq/interactive/timer_slack
+    chown system system /sys/devices/system/cpu/cpu4/cpufreq/interactive/min_sample_time
+    chmod 0660 /sys/devices/system/cpu/cpu4/cpufreq/interactive/min_sample_time
+    chown system system /sys/devices/system/cpu/cpu4/cpufreq/interactive/hispeed_freq
+    chmod 0660 /sys/devices/system/cpu/cpu4/cpufreq/interactive/hispeed_freq
+    chown system system /sys/devices/system/cpu/cpu4/cpufreq/interactive/target_loads
+    chmod 0660 /sys/devices/system/cpu/cpu4/cpufreq/interactive/target_loads
+    chown system system /sys/devices/system/cpu/cpu4/cpufreq/interactive/go_hispeed_load
+    chmod 0660 /sys/devices/system/cpu/cpu4/cpufreq/interactive/go_hispeed_load
+    chown system system /sys/devices/system/cpu/cpu4/cpufreq/interactive/above_hispeed_delay
+    chmod 0660 /sys/devices/system/cpu/cpu4/cpufreq/interactive/above_hispeed_delay
+    chown system system /sys/devices/system/cpu/cpu4/cpufreq/interactive/boost
+    chmod 0660 /sys/devices/system/cpu/cpu4/cpufreq/interactive/boost
+    chown system system /sys/devices/system/cpu/cpu4/cpufreq/interactive/boostpulse
+    chown system system /sys/devices/system/cpu/cpu4/cpufreq/interactive/input_boost
+    chmod 0660 /sys/devices/system/cpu/cpu4/cpufreq/interactive/input_boost
+    chown system system /sys/devices/system/cpu/cpu4/cpufreq/interactive/boostpulse_duration
+    chmod 0660 /sys/devices/system/cpu/cpu4/cpufreq/interactive/boostpulse_duration
+    chown system system /sys/devices/system/cpu/cpu4/cpufreq/interactive/io_is_busy
+    chmod 0660 /sys/devices/system/cpu/cpu4/cpufreq/interactive/io_is_busy
+
+    # MSP Core Status
+    chown system system /sys/devices/system/cpu/cpu1/online
+    chown system system /sys/devices/system/cpu/cpu2/online
+    chown system system /sys/devices/system/cpu/cpu3/online
+    chown system system /sys/devices/system/cpu/cpu4/online
+    chown system system /sys/devices/system/cpu/cpu5/online
+    chown system system /sys/devices/system/cpu/cpu6/online
+    chown system system /sys/devices/system/cpu/cpu7/online
+
+    # CPU Idle
+    chown system system /sys/module/cpuidle_exynos64/parameters/enable_mask
+
     # Set up kernel tracing, but disable it by default
     chmod 0222 /sys/kernel/debug/tracing/trace_marker
     write /sys/kernel/debug/tracing/tracing_on 0
