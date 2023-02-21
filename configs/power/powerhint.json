@@ -68,6 +68,7 @@
             "Name": "CPUBigClusterMinFreq",
             "Path": "/sys/devices/system/cpu/cpu4/cpufreq/scaling_min_freq",
             "Values": [
+                "1300000",
                 "1200000",
                 "1100000",
                 "1000000",
