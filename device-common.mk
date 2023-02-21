@@ -285,7 +285,8 @@ PRODUCT_PACKAGES += \
 	wifiloader \
 	wpa_supplicant \
 	wpa_supplicant.conf \
-	android.hardware.wifi@1.0-service.legacy \
+	android.hardware.wifi@1.0 \
+	android.hardware.wifi@1.0-service \
 	TetheringConfigOverlay \
 	WifiOverlay
 
