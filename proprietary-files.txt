@@ -1,14 +1,14 @@
 # All unpinned blobs are from zerofltexx stock (N)
 
 # Fingerprint
-lib/libbauthserver.so
-lib64/libbauthserver.so
-lib/libbauthtzcommon.so
-lib64/libbauthtzcommon.so
-lib/libegis_fp_normal_sensor_test.so
-lib64/libegis_fp_normal_sensor_test.so
-lib/libsynaFpSensorTestNwd.so
-lib64/libsynaFpSensorTestNwd.so
+lib/libbauthserver.so:vendor/lib/libbauthserver.so
+lib64/libbauthserver.so:vendor/lib64/libbauthserver.so
+lib/libbauthtzcommon.so:vendor/lib/libbauthtzcommon.so
+lib64/libbauthtzcommon.so:vendor/lib64/libbauthtzcommon.so
+lib/libegis_fp_normal_sensor_test.so:vendor/lib/libegis_fp_normal_sensor_test.so
+lib64/libegis_fp_normal_sensor_test.so:vendor/lib64/libegis_fp_normal_sensor_test.so
+lib/libsynaFpSensorTestNwd.so:vendor/lib/libsynaFpSensorTestNwd.so
+lib64/libsynaFpSensorTestNwd.so:vendor/lib64/libsynaFpSensorTestNwd.so
 
 # Mobicore
 app/FFFFFFFF000000000000000000000001.drbin:vendor/app/FFFFFFFF000000000000000000000001.drbin

@@ -18,7 +18,7 @@ on post-fs-data
     mkdir /data/vendor/wifi/wpa 0770 wifi wifi
 
     # copy wpa_supplicant.conf
-    copy /system/vendor/etc/wifi/wpa_supplicant.conf /data/vendor/wifi/wpa/wpa_supplicant.conf
+    copy /vendor/etc/wifi/wpa_supplicant.conf /data/vendor/wifi/wpa/wpa_supplicant.conf
     chown wifi system /data/vendor/wifi/wpa/wpa_supplicant.conf
     chmod 0660 /data/vendor/wifi/wpa/wpa_supplicant.conf
 
@@ -73,17 +73,6 @@ on boot
     # Pcie WiFi T-put setting
 	write /sys/class/net/wlan0/queues/rx-0/rps_cpus 00
 
-
-# tiburona
-# start for WiFi MFG (TestMode)
-
-service wlandutservice /system/bin/wlandutservice
-    class main
-    user system
-    group wifi net_raw net_admin system inet
-    disabled
-    oneshot
-
 service macloader /vendor/bin/macloader
     class main
     oneshot
@@ -99,8 +88,3 @@ on property:init.svc.macloader=stopped
     chown system root /data/.rev
     chmod 0664 /data/.rev
 # end of WiFi MFG (TestMode)
-
-service olsrd /system/bin/olsrd -f /etc/wifi/olsrd.conf
-    class main
-    disabled
-    oneshot
