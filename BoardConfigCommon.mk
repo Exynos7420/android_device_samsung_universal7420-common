@@ -137,10 +137,6 @@ TARGET_CUSTOM_DTBTOOL := dtbhtoolExynos
 # Keymaster
 BOARD_USES_TRUST_KEYMASTER := true
 
-# Mediaserver-shim
-TARGET_LD_SHIM_LIBS += \
-    /system/bin/mediaserver|/vendor/lib/libstagefright_shim.so
-
 # MEMFD
 TARGET_HAS_MEMFD_BACKPORT := true
 

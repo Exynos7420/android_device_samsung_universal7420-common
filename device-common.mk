@@ -247,10 +247,6 @@ PRODUCT_PACKAGES += \
 # Soong
 PRODUCT_SOONG_NAMESPACES += $(LOCAL_PATH)
 
-# Stagefright-shims
-PRODUCT_PACKAGES += \
-	libstagefright_shim
-
 # SSWAP - For swap
 PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/prebuilt/sswap:$(TARGET_COPY_OUT_VENDOR)/bin/sswap
