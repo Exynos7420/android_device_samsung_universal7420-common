@@ -116,6 +116,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
 	android.hardware.biometrics.fingerprint@2.1-service.samsung
 
+# Framework
+PRODUCT_ENFORCE_RRO_TARGETS := \
+    framework-res
+
 # GNSS
 PRODUCT_PACKAGES += \
 	android.hardware.gnss@1.0-impl.universal7420 \
