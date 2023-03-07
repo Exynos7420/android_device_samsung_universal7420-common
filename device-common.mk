@@ -272,8 +272,8 @@ PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/prebuilt/sswap:$(TARGET_COPY_OUT_VENDOR)/bin/sswap
 
 # Touch
-# PRODUCT_PACKAGES += \
-# 	vendor.lineage.touch@1.0-service.samsung
+PRODUCT_PACKAGES += \
+ 	vendor.lineage.touch@1.0-service.samsung
 
 # Trust
 PRODUCT_PACKAGES += \
