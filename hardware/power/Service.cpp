@@ -37,7 +37,7 @@ int main() {
 	status_t status;
 	android::sp<Power> service = nullptr;
 
-	ALOGI("Zero Power HAL Service is starting...");
+	ALOGI("Universal7420 Power HAL Service is starting...");
 
     service = new Power();
     if (service == nullptr) {
@@ -53,10 +53,10 @@ int main() {
         goto shutdown;
     }
 
-    ALOGI("Zero Power HAL Service is ready!");
+    ALOGI("Universal7420 Power HAL Service is ready!");
     joinRpcThreadpool();
 
 shutdown:
-    ALOGE("Zero Power HAL Service is shutting down...");
+    ALOGE("Universal7420 Power HAL Service is shutting down...");
     return 1;
 }
