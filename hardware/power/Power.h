@@ -41,8 +41,6 @@ using std::ostringstream;
 #define POWER_DT2W_ENABLED                "/sys/class/dt2w/enabled"
 #define POWER_TOUCHKEYS_ENABLED           "/sys/class/sec/sec_touchkey/input/enabled"
 #define POWER_TOUCHKEYS_BRIGHTNESS        "/sys/class/sec/sec_touchkey/brightness"
-#define POWER_FINGERPRINT_PM			  "/sys/class/fingerprint/fingerprint/pm"
-#define POWER_FINGERPRINT_WAKELOCKS       "/sys/class/fingerprint/fingerprint/wakelocks"
 
 #define POWER_TOUCHSCREEN_NAME            "/sys/class/input/input1/name"
 #define POWER_TOUCHSCREEN_NAME_EXPECT     "sec_touchscreen"
@@ -244,9 +242,6 @@ private:
 
 	// updates the current state of managed input-devices.
 	void setInputState(bool enabled);
-
-	// updates the current state the fingerprint-sensor
-	void setFingerprintState(bool enabled);
 
 	// updates the current state the doubletap2wake-capability. uses the 
 	// global member [mIsDT2WEnabled] to determine the new state
