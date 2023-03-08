@@ -187,6 +187,16 @@ Return<void> Power::powerHint(PowerHint hint, int32_t data)  {
 			}
 			break;
 		}
+		case_uint32_t (PowerHint::VR_SUSTAINED_PERFORMANCE):
+		{
+			ALOGV("%s: PowerHint::VR_SUSTAINED_PERFORMANCE(%d)", __func__, data);
+			if (data) {
+				setProfile(SecPowerProfiles::HIGH_PERFORMANCE);
+			} else {
+				resetProfile();
+			}
+			break;
+		}
 		case_uint32_t (PowerHint::VR_MODE):
 		{
 			ALOGV("%s: PowerHint::VR_MODE(%d)", __func__, data);
@@ -197,7 +207,51 @@ Return<void> Power::powerHint(PowerHint hint, int32_t data)  {
 			}
 			break;
 		}
+		case_uint32_t (PowerHint::EXPENSIVE_RENDERING):
+		{
+			ALOGV("%s: PowerHint::EXPENSIVE_RENDERING(%d)", __func__, data);
+			if (data) {
+				setProfile(SecPowerProfiles::HIGH_PERFORMANCE);
+			} else {
+				resetProfile();
+			}
+			break;
+		}
 		
+		/*
+		 * Camera
+		 */
+		case_uint32_t (PowerHint::CAMERA_LAUNCH):
+		{
+			ALOGV("%s: PowerHint::CAMERA_LAUNCH(%d)", __func__, data);
+			if (data) {
+				setProfile(SecPowerProfiles::BIAS_PERFORMANCE);
+			} else {
+				resetProfile();
+			}
+			break;
+		}
+		case_uint32_t (PowerHint::CAMERA_STREAMING_MID):
+		{
+			ALOGV("%s: PowerHint::CAMERA_STREAMING_MID(%d)", __func__, data);
+			if (data) {
+				setProfile(SecPowerProfiles::BIAS_PERFORMANCE);
+			} else {
+				resetProfile();
+			}
+			break;
+		}
+		case_uint32_t (PowerHint::CAMERA_SHOT):
+		{
+			ALOGV("%s: PowerHint::CAMERA_SHOT(%d)", __func__, data);
+			if (data) {
+				setProfile(SecPowerProfiles::BIAS_PERFORMANCE);
+			} else {
+				resetProfile();
+			}
+			break;
+		}
+
 		/*
 		 * Interaction/Boosting
 		 */
