@@ -247,10 +247,6 @@ private:
 	// global member [mIsDT2WEnabled] to determine the new state
 	void setDT2WState();
 
-	// fetches the correct property and checks if the user disable
-	// a specific power-module.
-	bool isModuleEnabled(string module);
-
 };
 
 }  // namespace implementation
