@@ -359,8 +359,6 @@ on boot
 
 on fs
     mount_all /vendor/etc/fstab.samsungexynos7420 --early
-    swapon_all /vendor/etc/fstab.samsungexynos7420
-    write /proc/sys/vm/swappiness 100
 
 # Permissions for TouchScreen
     chown system radio /sys/class/sec/tsp/cmd
@@ -764,3 +762,6 @@ on property:sys.boot_completed=1
     write /sys/block/sda/queue/iostats 1
     write /sys/block/sda/queue/read_ahead_kb 256
     write /sys/block/sda/queue/nr_requests 128
+
+    swapon_all /vendor/etc/fstab.samsungexynos7420
+    write /proc/sys/vm/swappiness 100
