@@ -90,8 +90,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
 	ro.opengles.version=196610 \
 	debug.hwui.use_buffer_age=false \
-	ro.sf.lcd_density=640 \
-	sys.use_fifo_ui=1
+	ro.sf.lcd_density=640
 
 #
 # Audio
