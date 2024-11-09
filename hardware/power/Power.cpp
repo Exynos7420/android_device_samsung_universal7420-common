@@ -210,7 +210,6 @@ Return<void> Power::powerHint(PowerHint hint, int32_t data)  {
 		case_uint32_t (PowerHint::LAUNCH):
 		{
 			// ALOGV("%s: PowerHint::LAUNCH(%d)", __func__, data);
-			boostpulse(data);
 			break;
 		}
 		case_uint32_t (PowerHint::VSYNC):
