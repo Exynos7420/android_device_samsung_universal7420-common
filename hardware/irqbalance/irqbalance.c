@@ -31,18 +31,13 @@
   #define ALOGVV(...) { }
 #endif
 
-#define false (0)
-#define true  (1)
-typedef unsigned char bool;
-
 typedef unsigned char u8;
 typedef unsigned long long u64;
 
 typedef struct cpudata {
 
-	// general
+	// utilization
 	u8 core;
-	bool online;
 
 	// cputimes read from /proc/stat
 	u64 cputime_user;
@@ -61,6 +56,11 @@ typedef struct cpudata {
 
 } cpudata_t;
 
+typedef struct balancedata {
+	int core;
+	int util;
+} balancedata_t;
+
 static int NR_CPUS = -1;
 static int OFFS_CPUS = -1;
 
@@ -76,7 +76,7 @@ static cpudata_t *__cpudata;
 
 static int read_cpudata(cpudata_t *cpudata, int core) {
 	FILE *fp = fopen("/proc/stat", "r");
-	int coredummy;
+	char cdummy[255];
 	int i, ret;
 
 	if (!fp) {
@@ -88,7 +88,7 @@ static int read_cpudata(cpudata_t *cpudata, int core) {
 		fscanf(fp, "%*[^\n]\n", NULL);
 	}
 
-	ret = fscanf(fp, "cpu%d %llu %llu %llu %llu %llu %llu %llu %llu %llu %llu\n", &coredummy,
+	ret = fscanf(fp, "%s %llu %llu %llu %llu %llu %llu %llu %llu %llu %llu", cdummy,
 		&cpudata->cputime_user,
 		&cpudata->cputime_nice,
 		&cpudata->cputime_system,
@@ -101,17 +101,8 @@ static int read_cpudata(cpudata_t *cpudata, int core) {
 		&cpudata->cputime_guest_nice);
 
 	if (ret != 11) {
-		if (cpudata->online) {
-			ALOGW("%s: --- marking cpu%d as offline\n", __func__, core);
-			cpudata->online = false;
-		}
 		return -EINVAL;
 	}
-
-	if (!cpudata->online)
-		ALOGI("%s: +++ marking cpu%d as online\n", __func__, core);
-
-	cpudata->online = true;
 
 	fclose(fp);
 	return 0;
@@ -130,8 +121,7 @@ static void irqbalance_load_watchdog(void) {
 		// read the current cputimes
 		ret = read_cpudata(&__cpudata[i], i);
 		if (ret) {
-			if (__cpudata[i].online)
-				ALOGE("%s: failed to read cpudata for core %d: %s (%d)", __func__, core, strerror(-ret), -ret);
+			ALOGE("%s: failed to read cpudata for core %d: %s (%d)", __func__, core, strerror(-ret), -ret);
 			break;
 		}
 
@@ -159,7 +149,6 @@ static void irqbalance_main() {
 	int i, j, n, swp;
 	int total_util;
 	int irqs_processed;
-	int online_cpus;
 	char irqpath[255];		
 	cpudata_t c_cpudata[NR_CPUS];
 
@@ -181,26 +170,18 @@ static void irqbalance_main() {
 
 	irqs_processed = 0;
 	total_util = 0;
-	online_cpus = 0;
 
-	for (i = 0; i < NR_CPUS; i++) {
+	for (i = 0; i < NR_CPUS; i++)
 		total_util += (int)c_cpudata[i].cpu_util;
-		if (c_cpudata[i].online)
-			online_cpus++;
-	}
 
 	for (i = NR_CPUS - 1; i >= 0 && irqs_processed < irqs_num; i--) {
-		int online_index = (online_cpus - 1);
 		int core = c_cpudata[i].core;
 		int util = (int)c_cpudata[i].cpu_util;
 		double ratio = util / 100.0;
 
-		if (!c_cpudata[i].online)
-			continue;
-
 		int irqs_left = (irqs_num - irqs_processed);
-		int irqnum = (int)ceil((irqs_left - (sqrt(ratio) * irqs_left)) / online_index);
-		if (online_index == 0)
+		int irqnum = (int)ceil((irqs_left - (sqrt(ratio) * irqs_left)) / i);
+		if (i == 0)
 			irqnum = irqs_left;
 
 		ALOGV("%s: +++ core%d(%02x): util=%d;ratio=%f;irqnum=%d;irqs_processed=%d\n", __func__, core, 1 << core, util, ratio, irqnum, irqs_processed);
@@ -218,14 +199,7 @@ static void irqbalance_main() {
 				ALOGV("%s: --- failed to open IRQ SMP affinity file for IRQ %d\n", __func__, irqs[irqidx]);
 			}
 		}
-
 		irqs_processed += irqnum;
-
-		if (online_cpus <= 0)
-			break;
-
-		if (c_cpudata[i].online)
-			online_cpus--;
 	}
 }
 
