@@ -20,7 +20,6 @@
 
 #include <cutils/log.h>
 
-#include <errno.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -31,6 +30,10 @@
 #else
   #define ALOGVV(...) { }
 #endif
+
+#define false (0)
+#define true  (1)
+typedef unsigned char bool;
 
 typedef unsigned char u8;
 typedef unsigned long long u64;
